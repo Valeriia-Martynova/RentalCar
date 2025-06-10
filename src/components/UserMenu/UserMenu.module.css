@@ -1,0 +1,33 @@
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: none;
+  margin: 0;
+}
+
+.name {
+  font-weight: 700;
+  color: #4a90e2;
+}
+
+.btnExit {
+  width: 50px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(45deg, #6a85b6, #bac8e0);
+  color: white;
+  font-weight: bold;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.btnExit:hover {
+  background: linear-gradient(45deg, #5b76a4, #9cb3d3);
+  transform: scale(1.05);
+}
+
+.iconLogOut {
+  width: 20px;
+  height: 20px;
+}
