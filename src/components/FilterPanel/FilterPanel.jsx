@@ -26,7 +26,7 @@ const FilterPanel = () => {
   const priceOptions = generatePriceOptions(80, 10);
 
   useEffect(() => {
-    if (!availableBrands.length) {
+    if (!availableBrands?.length) {
       dispatch(fetchBrandsThunk());
     }
   }, [dispatch, availableBrands.length]);

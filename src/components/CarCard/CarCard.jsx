@@ -26,7 +26,7 @@ const CarCard = ({ car }) => {
   const dispatch = useDispatch();
 
   const favorites = useSelector(selectFavorites);
-  const isFavorite = favorites.includes(id);
+  const isFavorite = Array.isArray(favorites) && favorites.includes(car.id);
 
   const handleFavoriteToggle = () => {
     dispatch(toggleFavorite(id));
