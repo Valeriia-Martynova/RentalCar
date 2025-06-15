@@ -10,23 +10,28 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-import { authReducer } from "./auth/slice";
-import { contactsReducer } from "./contacts/slice";
-import { filtersReducer } from "./filters/slice";
 
-const authPersistConfig = {
-  key: "auth",
+import carsReducer from "./cars/slice";
+import { favoritesReducer } from "./favorites/slice";
+import filtersReducer from "./filters/slice";
+
+const persistConfig = {
+  key: "favorites",
+  version: 1,
   storage,
-  whitelist: ["token"],
 };
 
-const persistedReducer = persistReducer(authPersistConfig, authReducer);
+const persistedFavoritesReducer = persistReducer(
+  persistConfig,
+  favoritesReducer,
+  filtersReducer
+);
 
 export const store = configureStore({
   reducer: {
-    auth: persistedReducer,
-    contacts: contactsReducer,
-    filters: filtersReducer,
+    cars: carsReducer,
+    favorites: persistedFavoritesReducer,
+    filters: favoritesReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -1,14 +1,19 @@
-import { FaAddressBook } from "react-icons/fa";
-import c from "./HomePage.module.css";
+import { useNavigate } from "react-router-dom";
+import styles from "./HomePage.module.css";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className={c.homePage}>
-      <h1>
-        <FaAddressBook />
-        Phonebook 💛💙
-      </h1>
-    </div>
+    <section className={styles.hero}>
+      <h1 className={styles.title}>Find your perfect rental car</h1>
+      <p className={styles.subtitle}>
+        Reliable and budget-friendly rentals for any journey
+      </p>
+      <button className={styles.button} onClick={() => navigate("/catalog")}>
+        View Catalog
+      </button>
+    </section>
   );
 };
 
